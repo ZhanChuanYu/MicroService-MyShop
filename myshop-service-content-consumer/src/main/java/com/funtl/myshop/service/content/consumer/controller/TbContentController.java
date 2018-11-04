@@ -28,6 +28,15 @@ public class TbContentController {
         return "content/list";
     }
 
+    /**
+     * 跳转到表单页
+     * @return
+     */
+    @RequestMapping(value = "form", method = RequestMethod.GET)
+    public String form() {
+        return "content/form";
+    }
+
     @ResponseBody
     @RequestMapping(value = "page", method = RequestMethod.GET)
     public DataTableDTO<TbContent> page(HttpServletRequest request, TbContent tbContent) {

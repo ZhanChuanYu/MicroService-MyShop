@@ -47,6 +47,10 @@ cd myshop-service-content-consumer
 call mvn clean
 
 cd ..
+cd myshop-service-upload
+call mvn clean
+
+cd ..
 cd myshop-web-admin
 call mvn clean
 

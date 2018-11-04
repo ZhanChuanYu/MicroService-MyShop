@@ -36,6 +36,7 @@
         <!-- Commons Settings -->
         <kyro.version>0.42</kyro.version>
         <mysql.version>8.0.12</mysql.version>
+        <fastdfs.version>1.27</fastdfs.version>
     </properties>
 
     <dependencyManagement>
@@ -86,6 +87,11 @@
                 <groupId>de.javakaffee</groupId>
                 <artifactId>kryo-serializers</artifactId>
                 <version>${kyro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.csource</groupId>
+                <artifactId>fastdfs-client-java</artifactId>
+                <version>${fastdfs.version}</version>
             </dependency>
             <!-- Commons End -->
         </dependencies>
