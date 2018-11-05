@@ -31,11 +31,19 @@ cd myshop-service-content-api
 call mvn clean
 
 cd ..
+cd myshop-service-redis-api
+call mvn clean
+
+cd ..
 cd myshop-service-user-provider
 call mvn clean
 
 cd ..
 cd myshop-service-content-provider
+call mvn clean
+
+cd ..
+cd myshop-service-redis-provider
 call mvn clean
 
 cd ..

@@ -29,3 +29,7 @@ call mvn deploy
 cd ..
 cd myshop-service-content-api
 call mvn deploy
+
+cd ..
+cd myshop-service-redis-api
+call mvn clean

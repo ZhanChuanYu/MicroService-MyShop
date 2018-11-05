@@ -1,17 +1,7 @@
 # Spring boot application
 spring:
   application:
-    name: myshop-service-user-provider
-  datasource:
-    druid:
-      url: jdbc:mysql://192.168.10.131:3306/myshop?useUnicode=true&characterEncoding=utf-8&useSSL=false
-      username: root
-      password: 123456
-      initial-size: 1
-      min-idle: 1
-      max-active: 20
-      test-on-borrow: true
-      driver-class-name: com.mysql.cj.jdbc.Driver
+    name: myshop-service-redis-provider
   redis:
     lettuce:
       pool:
@@ -23,39 +13,30 @@ spring:
       master: mymaster
       nodes: 192.168.10.131:26379, 192.168.10.131:26380, 192.168.10.131:26381
 server:
-  port: 8501
-
-# MyBatis Config properties
-mybatis:
-  configuration:
-    cache-enabled: true
-  type-aliases-package: com.funtl.myshop.commons.domain
-  mapper-locations: classpath:mapper/*.xml
+  port: 8503
 
 # Services Versions
 services:
   versions:
     redis:
       v1: 1.0.0
-    user:
-      v1: 1.0.0
 
 # Dubbo Config properties
 dubbo:
   ## Base packages to scan Dubbo Component：@com.alibaba.dubbo.config.annotation.Service
   scan:
-    basePackages: com.funtl.myshop.service.user.provider.api.impl
+    basePackages: com.funtl.myshop.service.redis.provider.api.impl
   ## ApplicationConfig Bean
   application:
-    id: myshop-service-user-provider
-    name: myshop-service-user-provider
-    qos-port: 22222
+    id: myshop-service-redis-provider
+    name: myshop-service-redis-provider
+    qos-port: 22224
     qos-enable: true
   ## ProtocolConfig Bean
   protocol:
     id: dubbo
     name: dubbo
-    port: 20881
+    port: 20883
     status: server
     serialization: kryo
   ## RegistryConfig Bean
@@ -86,7 +67,3 @@ management:
         defaults: memory
         ## StatusChecker Name extras (default : empty )
         extras: load,threadpool
-
-
-logging:
-  level.com.funtl.myshop.commons.mapper: DEBUG

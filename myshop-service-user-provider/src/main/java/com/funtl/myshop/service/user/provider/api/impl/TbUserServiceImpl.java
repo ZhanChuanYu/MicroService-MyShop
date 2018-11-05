@@ -1,8 +1,10 @@
 package com.funtl.myshop.service.user.provider.api.impl;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.funtl.myshop.commons.domain.TbUser;
 import com.funtl.myshop.commons.mapper.TbUserMapper;
+import com.funtl.myshop.service.redis.api.RedisService;
 import com.funtl.myshop.service.user.api.TbUserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
